@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Center for Causal Discovery" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Demo SAML Service Provider</title>
+        <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <h5 class="my-0 mr-md-auto font-weight-normal">SAML SP Demo</h5>
+            <form th:action="@{/logout}" method="post">
+                <input class="btn btn-outline-primary" type="submit" value="Sign Out"/>
+            </form>
+        </div>
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Congratulations!</h1>
+            <p class="lead">You're signed in.</p>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-header">User Attributes</div>
+                        <div class="card-body">
+                            <table class="table table-sm table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Attribute</th>
+                                        <th scope="col">Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="item : ${attrs}">
+                                        <td th:text="${item.key}"></td>
+                                        <td th:text="${item.value}"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="card mb-4">
+                        <div class="card-header">SAML Response</div>
+                        <div class="card-body">
+                            <pre lang="xml" th:text="${samlresponse}"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/vendor/jquery/jquery-3.5.1.slim.min.js" th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"></script>
+        <script src="../static/vendor/bootstrap/js/bootstrap.min.js" th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+    </body>
+</html>

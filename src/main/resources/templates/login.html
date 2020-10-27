@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Center for Causal Discovery" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Demo SAML Service Provider</title>
+        <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}" />
+        <link rel="stylesheet" href="../static/vendor/fontawesome/css/all.min.css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css}" />
+    </head>
+    <body>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <h5 class="my-0 mr-md-auto font-weight-normal">SAML SP Demo</h5>
+        </div>
+        <main>
+            <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <h1 class="display-4 text-center"><i class="fas fa-paw"></i> Welcome!</h1>
+                        <div class="card shadow-lg mt-5">
+                            <div class="card-header text-center">
+                                <h4 class="my-0 font-weight-normal">Docker Test SAML 2.0 IdP</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>SAML 2.0 Identity Provider (IdP) for development and testing.</p>
+                                <p>Do not use this container in production!</p>
+                                <a class="btn btn-lg btn-block btn-outline-primary" href="#" th:href="@{/saml2/authenticate/samltestidp}">Sign In</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="../static/vendor/jquery/jquery-3.5.1.slim.min.js" th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"></script>
+        <script src="../static/vendor/bootstrap/js/bootstrap.min.js" th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+    </body>
+</html>
