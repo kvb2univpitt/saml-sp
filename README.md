@@ -1,13 +1,18 @@
 # saml-sp
 A simple Spring Boot SAML service provider template.
 
-Requirements:
-- OpenJDK 11
-- Apache Maven 3.x
+### Prerequisites - You must have the following installed:
+- OpenJDK 11 or Oracle JDK 11
+- Apache Maven 3.x.x
 - Docker 19.x
 
+Please follow the guides listed below to install the prerequisites:
+- [OpenJDK installation guide](https://openjdk.java.net/install/)
+- [Maven installation guide](https://maven.apache.org/install.html)
+- [Docker installation guide](https://docs.docker.com/get-docker/)
+
 ## Setup SAML Identity Provider (IdP)
-The first thing we need to do is to setup a SAML identity provider (IdP) to issues authentication assertions to our service provider (SP).  Download the [Docker Test SAML 2.0 Identity Provider (IdP)](https://github.com/kristophjunge/docker-test-saml-idp).  Extract the file docker-test-saml-idp-master.zip to your local directory.
+The first thing we need to do is to setup a SAML identity provider (IdP) to issues authentication assertions to our service provider (SP).  This requires Docker 19.x installed.  Download the [Docker Test SAML 2.0 Identity Provider (IdP)](https://github.com/kristophjunge/docker-test-saml-idp).  Extract the file docker-test-saml-idp-master.zip to your local directory.
 
 ### Update the Docker Software
 The docker SAML IdP is built with [SimpleSAMLphp](https://simplesamlphp.org/) and PHP7 Apache [images](https://hub.docker.com/_/php/).  Let's update the SimpleSAMLphp to version **1.18.8** and PHP to version **7.4** by modifying the file ***Dockerfile*** in the **docker-test-saml-idp-master/** folder:
@@ -150,7 +155,7 @@ docker rmi <IMAGE ID>
 Note that `<IMAGE ID>` is the ID of the docker image.  In this example, it's ***02df60f9f54d***.
 
 ## Run SAML Service Provider (SP)
-Download and extract the source code to a folder.  Go to the folder and execute the following command:
+This requires OpenJKD 11 and Apache Maven installed.  Download and extract the source code to a folder.  Go to the folder and execute the following command:
 ```
 ./mvnw spring-boot:run
 ```
