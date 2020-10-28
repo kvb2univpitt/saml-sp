@@ -31,11 +31,12 @@ Below is the table of all the variables that are required to run the SAML IdP.
 
 Assuming we want to run a SAML IdP with the following user credential and user profile:
 
-| UID | Username | Password | Group | Email | First Name | Last Name |
+| UID | Username | Password | Group | Email | FirstName | LastName |
 |---|---|---|---|---|---|---|---|
 | 1 | jkim | inyourarea | blackpink | jkim@yg.com | Jennie | Kim |
 
 Open up a terminal and execute the following command:
+
 ```
 docker run -d --name=testsamlidp_idp \
 -p 8080:8080 \
@@ -52,9 +53,12 @@ docker run -d --name=testsamlidp_idp \
 -e SIMPLESAMLPHP_LAST_NAME=Kim \
 kvb2univpitt/test-saml2-idp:v1
 ```
+
 To check if docker is running, execute the following command:
+
 ```
 docker ps -a
+
 ```
 You should see output similar to this:
 ```
@@ -67,6 +71,7 @@ You can now access the SimpleSAMLphp web interface of the IdP at [http://localho
 
 ### Stop the Docker
 To stop docker, open up a terminal and execute the following command:
+
 ```
 docker stop testsamlidp_idp
 docker rm testsamlidp_idp
@@ -74,6 +79,7 @@ docker rm testsamlidp_idp
 
 ## Run the SAML 2.0 Service Provider (SP)
 We are now ready to run the SAML service provider.  Download and extract the source code to a folder.  Go to the folder **saml-sp** and execute the following command to run the service provider:
+
 ```
 ./mvnw spring-boot:run
 ```
