@@ -32,7 +32,7 @@ Below is the table of all the variables that are required to run the SAML IdP.
 Assuming we want to run a SAML IdP with the following user credential and user profile:
 
 | UID | Username | Password | Group | Email | FirstName | LastName |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | 1 | jkim | inyourarea | blackpink | jkim@yg.com | Jennie | Kim |
 
 Open up a terminal and execute the following command:
