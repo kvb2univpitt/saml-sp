@@ -1,6 +1,8 @@
 # saml-sp
 A simple Spring Boot application for demonstrating SAML 2.0 service provider (SP).  This sample application can be run as is without any configuration.  However, you will need to run the docker SAML 2.0 identity provider (IdP) for the service provide to communicate for federated login (see instruction below).
 
+To learn about how SAML works, please read the guide from Okta [https://developer.okta.com/docs/concepts/saml/](https://developer.okta.com/docs/concepts/saml/)
+
  ## Prerequisites
  You will need the download and install following to compile and build the software:
  - Java SDK 8 or higher ([Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) or [OpenJDK](https://adoptopenjdk.net/))
