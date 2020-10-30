@@ -24,9 +24,9 @@ Below is the table of all the variables that are required to run the SAML IdP.
 | SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE | Service Provider | Service provider assertion consumer service location |
 | SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE | Service Provider | Service provider single logout service location |
 | SIMPLESAMLPHP_ADMIN_PASSWORD | Admin Credential | Admin password |
-| SIMPLESAMLPHP_UID | User Profile | Unique user ID |
 | SIMPLESAMLPHP_USER | User Credential | User's login username |
 | SIMPLESAMLPHP_PASSWORD | User Credential | User's login password |
+| SIMPLESAMLPHP_UID | User Profile | Unique user ID |
 | SIMPLESAMLPHP_GROUP | User Profile | User's group |
 | SIMPLESAMLPHP_EMAIL | User Profile | User's email |
 | SIMPLESAMLPHP_FIRST_NAME | User Profile | User's first name |
