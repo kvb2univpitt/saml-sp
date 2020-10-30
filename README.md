@@ -63,7 +63,6 @@ To check if docker is running, execute the following command:
 
 ```
 docker ps -a
-
 ```
 You should see output similar to this:
 ```
