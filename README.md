@@ -15,7 +15,7 @@ The first thing we want to do is to run the SAML identity service.  This service
 
 We provide a preconfigured SAML IdP docker image that works with this SAML service provider.  The docker image is in the DockerHub Registry.  Before we pull the dock image and run it, let's go over the input environment variables that will be needed.
 
-### Input Enviroment Variables
+### Input Environment Variables
 Below is the table of all the variables that are required to run the SAML IdP.
 
 | Variable | Type | Description |
@@ -23,6 +23,7 @@ Below is the table of all the variables that are required to run the SAML IdP.
 | SIMPLESAMLPHP_SP_ENTITY_ID | Service Provider | Service provider entity ID |
 | SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE | Service Provider | Service provider assertion consumer service location |
 | SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE | Service Provider | Service provider single logout service location |
+| SIMPLESAMLPHP_ADMIN_PASSWORD | Admin Credential | Admin password |
 | SIMPLESAMLPHP_UID | User Profile | Unique user ID |
 | SIMPLESAMLPHP_USER | User Credential | User's login username |
 | SIMPLESAMLPHP_PASSWORD | User Credential | User's login password |
@@ -31,11 +32,12 @@ Below is the table of all the variables that are required to run the SAML IdP.
 | SIMPLESAMLPHP_FIRST_NAME | User Profile | User's first name |
 | SIMPLESAMLPHP_LAST_NAME | User Profile | User's last name |
 
-Assuming we want to run a SAML IdP with the following user credential and user profile:
+### Example
+Assuming we want to run a SAML IdP with the admin password ***letmein*** and the following user credential and profile information:
 
 | UID | Username | Password | Group | Email | FirstName | LastName |
 |---|---|---|---|---|---|---|
-| 1 | jkim | inyourarea | blackpink | jkim@yg.com | Jennie | Kim |
+| 1 | ckent | batman | Daily Planet | ckent@dailyplanet.com | Clark | Kent |
 
 Open up a terminal and execute the following command:
 
@@ -43,16 +45,17 @@ Open up a terminal and execute the following command:
 docker run -d --name=testsamlidp_idp \
 -p 8080:8080 \
 -p 8443:8443 \
+-e SIMPLESAMLPHP_ADMIN_PASSWORD=letmein
 -e SIMPLESAMLPHP_SP_ENTITY_ID=https://localhost:6443/saml2/service-provider-metadata/samltestidp \
 -e SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE=https://localhost:6443/login/saml2/sso/samltestidp \
 -e SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE=https://localhost:6443/logout \
 -e SIMPLESAMLPHP_UID=1 \
--e SIMPLESAMLPHP_USER=jkim \
--e SIMPLESAMLPHP_PASSWORD=inyourarea \
--e SIMPLESAMLPHP_GROUP=blackpink \
--e SIMPLESAMLPHP_EMAIL=jkim@yg.com \
--e SIMPLESAMLPHP_FIRST_NAME=Jennie \
--e SIMPLESAMLPHP_LAST_NAME=Kim \
+-e SIMPLESAMLPHP_USER=ckent \
+-e SIMPLESAMLPHP_PASSWORD=batman \
+-e SIMPLESAMLPHP_GROUP=Daily Planet \
+-e SIMPLESAMLPHP_EMAIL=ckent@dailyplanet.com \
+-e SIMPLESAMLPHP_FIRST_NAME=Clark \
+-e SIMPLESAMLPHP_LAST_NAME=Kent \
 kvb2univpitt/test-saml2-idp:v1
 ```
 
