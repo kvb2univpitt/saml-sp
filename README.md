@@ -45,7 +45,7 @@ Open up a terminal and execute the following command:
 docker run -d --name=testsamlidp_idp \
 -p 8080:8080 \
 -p 8443:8443 \
--e SIMPLESAMLPHP_ADMIN_PASSWORD=letmein
+-e SIMPLESAMLPHP_ADMIN_PASSWORD=letmein \
 -e SIMPLESAMLPHP_SP_ENTITY_ID=https://localhost:6443/saml2/service-provider-metadata/samltestidp \
 -e SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE=https://localhost:6443/login/saml2/sso/samltestidp \
 -e SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE=https://localhost:6443/logout \
