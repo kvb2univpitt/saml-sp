@@ -72,7 +72,7 @@ b0c902685caa        kvb2univpitt/test-saml2-idp:v1   "docker-php-entrypoi…"   
 ```
 
 ### Access the Identity Provider (IdP)
-You can now access the SimpleSAMLphp web interface of the IdP at [http://localhost:8080/simplesaml](http://localhost:8080/simplesaml).  The admin password is ***secret***.
+You can now access the SimpleSAMLphp web interface of the IdP at [http://localhost:8080/simplesaml](http://localhost:8080/simplesaml).  In this example, the admin password is ***letmein***.
 
 ### Stop the Docker
 To stop docker, open up a terminal and execute the following command:
@@ -98,7 +98,7 @@ You should see the login page.
 
 ![Welcome Page](https://raw.githubusercontent.com/kvb2univpitt/saml-sp/main/img/welcome.png)
 
-Click the "Sign In" Button.  It should redirect you to the login page of the identity provider.  Enter the username and password.  In this example, the username is ***jkim*** and the password is ***inyourarea***.
+Click the "Sign In" Button.  It should redirect you to the login page of the identity provider.  Enter the username and password.  In this example, the username is ***ckent*** and the password is ***batman***.
 
 ![Login Page](https://raw.githubusercontent.com/kvb2univpitt/saml-sp/main/img/login.png)
 
